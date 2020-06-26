@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  postgres:
+      image: postgres:12.2
+      container_name: keycloak_postgres
+      environment:
+        POSTGRES_DB: keycloak
+        POSTGRES_USER: keycloak
+        POSTGRES_PASSWORD: password
+
+  keycloak:
+      image: jboss/keycloak:latest
+      container_name: keycloak
+      environment:
+        DB_VENDOR: POSTGRES
+        DB_ADDR: postgres
+        DB_DATABASE: keycloak
+        DB_USER: keycloak
+        DB_PASSWORD: password
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: password
+        PROXY_ADDRESS_FORWARDING: "true"
+      ports:
+        - 8090:8080
+      depends_on:
+        - postgres
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: mailhog
+    ports:
+      - "8025:8025"
+
+
+
+

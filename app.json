@@ -1,0 +1,9 @@
+{
+  "name": "Go Starter Template",
+  "description": "Go Starter Template",
+  "keywords": [
+    "go"
+  ],
+  "website": "http://github.com/ralberts/golang-starter-template",
+  "repository": "http://github.com/ralberts/golang-starter-template"
+}

@@ -1,0 +1,26 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+        - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+      config_file: /etc/postgresql/postgresql.conf
+    volumes:
+        - postgresql:/var/lib/postgresql
+        - postgresql_data:/var/lib/postgresql/data
+        - ${PWD}/postgres.conf:/etc/postgresql/postgresql.conf
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+    postgresql:
+    postgresql_data:

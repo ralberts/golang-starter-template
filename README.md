@@ -1,48 +1,63 @@
+# go-starter
 
-# go-getting-started
+`golang-starter-template` is an opinionated [golang](https://golang.org/) backend development template that includes setup with GORM ORM (Postgres, etc), Echo web framework for API's, Go-playground for validation.
 
-A barebones Go app, which can easily be deployed to Heroku.
+## Overview
 
-This application supports the [Getting Started with Go on Heroku](https://devcenter.heroku.com/articles/getting-started-with-go) article - check it out.
+## Table of Contents
 
-## Running Locally
+- [go-starter](#go-starter)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Usage](#usage)
+    - [Requirements](#requirements)
+    - [Quickstart](#quickstart)
+  - [Contributing](#contributing)
+  - [Maintainers](#maintainers)
 
-Make sure you have [Go](http://golang.org/doc/install) version 1.12 or newer and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+## Features
 
-```sh
-$ git clone https://github.com/heroku/go-getting-started.git
-$ cd go-getting-started
-$ go build -o bin/go-getting-started -v . # or `go build -o bin/go-getting-started.exe -v .` in git bash
-github.com/mattn/go-colorable
-gopkg.in/bluesuncorp/validator.v5
-golang.org/x/net/context
-github.com/heroku/x/hmetrics
-github.com/gin-gonic/gin/render
-github.com/manucorporat/sse
-github.com/heroku/x/hmetrics/onload
-github.com/gin-gonic/gin/binding
-github.com/gin-gonic/gin
-github.com/heroku/go-getting-started
-$ heroku local
+- Development environment using [Docker Compose](https://docs.docker.com/compose/install/) and [VSCode devcontainers](https://code.visualstudio.com/docs/remote/containers) that works with Linux, MacOS and Windows.
+- Adheres to the project layout defined in [golang-standard/project-layout](https://github.com/golang-standards/project-layout)
+- Provides database ORM and abstraction for connecting to different databases.
+
+TODO Future
+- Integrates [go-swagger](https://github.com/go-swagger/go-swagger) for compile-time autogeneration of `swagger.json` and request/response validation functions.
+- Integrates [MailHog](https://github.com/mailhog/MailHog) for easy SMTP-based email testing
+- Parallel jobs optimized `Makefile` and various convenience scripts, a full rebuild via `make build` only takes seconds
+
+## Usage
+
+### Requirements
+
+Requires the following local setup for development:
+
+- [Docker CE](https://docs.docker.com/install/) (19.03 or above)
+- [Docker Compose](https://docs.docker.com/compose/install/) (1.25 or above)
+
+
+### Quickstart
+
+After your `git clone` you may do the following:
+
+```bash
+
+# $local
+# Easily start the docker-compose
+docker-compose up -d
+# Defaults to Postgres
+# Create golang-starter-template db in postgres via localhost:8080
+
+sh ./run-local.sh
+
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+## Contributing
 
-## Deploying to Heroku
+Pull requests are welcome. For major changes, please [open an issue](https://github.com/ralberts/golang-starter-template/issues/new/choose) first to discuss what you would like to change.
 
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
+## Maintainers
 
-or
+- [Ryan Alberts - @ralberts](https://github.com/ralberts)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-
-## Documentation
-
-For more information about using Go on Heroku, see these Dev Center articles:
-
-- [Go on Heroku](https://devcenter.heroku.com/categories/go)

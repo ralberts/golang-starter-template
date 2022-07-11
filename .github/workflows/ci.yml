@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - id: build
-      uses: cicd/go-build@v1
+      uses: gha-devops/cicd/go-build@v1

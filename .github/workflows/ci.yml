@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - id: build & test
+    - id: build
       uses: cicd/go-build@v1

@@ -41,7 +41,7 @@ func main() {
 
 	group := "/api"
 
-	// example
+	// example migration
 	example.Migrate(db)
 	example.Register(group, e)
 

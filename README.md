@@ -1,4 +1,4 @@
-# Go Starter Template
+# Go Starter Template DEMO
 
 `golang-starter-template` is an opinionated [golang](https://golang.org/) backend development template that includes setup with GORM ORM (Postgres, etc), Echo web framework for API's, Go-playground for validation.
 
